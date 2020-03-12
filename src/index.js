@@ -12,8 +12,14 @@ const io = socketio(server)
 const publicDirPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirPath))
 
-io.on('connection', function(socket){
-    console.log('Hello! A new user connected');
+io.on('connection', (socket) => {
+    console.log('Hello! A new user connected')
+
+    socket.emit('message', 'Welcome!')
+    socket.broadcast.emit('message', 'A new user has joined')
+    socket.on('sendMessage', (message) => {
+        io.emit('message', message)
+    })
 })
 
 server.listen(port, () => {
