@@ -6,7 +6,6 @@
        Chat App
 
        <div id="messages">
-
        </div>
     
        <form id="message-form">
@@ -17,13 +16,13 @@
 
        <script id="message-template" text="text/html">
            <div>
-                <p>{{message}}</p>
+                <p>{{createdAt}} - {{message}}</p>
             </div>
        </script>
 
         <script id="location-message-template" text="text/html">
             <div>
-                <p><a href="{{url}}" target="_blank">My Current Location</a></p>
+                <p>{{createdAt}} - <a href="{{url}}" target="_blank">My Current Location</a></p>
             </div>
         </script>
 
