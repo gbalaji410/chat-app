@@ -1,13 +1,15 @@
-const generateMessage = (message) => {
+const generateMessage = (username, message) => {
     return {
+        username, 
         text: message,
         createdAt: new Date().getTime()
     }
 }
 
-const generateLocationMessage = (url) => {
+const generateLocationMessage = (username, url) => {
     return {
-        linkText: url,
+        username,
+        url,
         createdAt: new Date().getTime()
     }
 }
